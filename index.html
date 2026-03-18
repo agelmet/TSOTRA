@@ -38,6 +38,7 @@
                         'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
                         'glow-pink': '0 0 40px -10px rgba(249, 176, 216, 0.6)',
                         'glow-sage': '0 0 40px -10px rgba(129, 141, 124, 0.6)',
+                        'card-hover': '0 25px 50px -12px rgba(129, 141, 124, 0.25)',
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -97,15 +98,15 @@
         }
         
         .glass-dark {
-            background: rgba(45, 51, 43, 0.7);
+            background: rgba(45, 51, 43, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(201, 206, 206, 0.2);
+            border: 1px solid rgba(201, 206, 206, 0.15);
         }
 
-        /* Hero Image Overlay Blend */
+        /* Hero Image Overlay Blend - Now with a green-ish (sage) shadow/gradient */
         .hero-overlay {
-            background: linear-gradient(135deg, rgba(252,252,252,0.95) 0%, rgba(252,252,252,0.7) 100%);
+            background: linear-gradient(135deg, rgba(252,252,252,0.95) 0%, rgba(252,252,252,0.8) 40%, rgba(129,141,124,0.45) 100%);
         }
 
         /* Marquee */
@@ -178,6 +179,7 @@
         <div class="absolute inset-0 z-0">
             <img src="https://github.com/agelmet/TSOTRA/blob/main/ts4.jpg?raw=true" alt="Χώρος Συνεδριών" class="w-full h-full object-cover object-center animate-kenburns">
             <div class="absolute inset-0 hero-overlay"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-calm-sage/30 to-transparent"></div>
         </div>
 
         <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center relative z-20">
@@ -252,68 +254,87 @@
         </div>
     </section>
 
-    <section id="services" class="py-24 px-6 bg-white relative">
-        <div class="max-w-7xl mx-auto">
+    <section id="services" class="py-24 px-6 bg-gradient-to-b from-calm-light to-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-calm-sage/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-calm-pink/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-calm-pink font-bold tracking-widest text-sm mb-4 block no-accents">ΤΟΜΕΙΣ ΠΑΡΕΜΒΑΣΗΣ</span>
                 <h2 class="text-4xl md:text-5xl font-serif text-calm-dark mb-6">Υπηρεσίες & Εξειδικεύσεις</h2>
                 <div class="w-20 h-1 bg-calm-sage mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid lg:grid-cols-2 gap-8">
                 
-                <div class="bg-calm-light p-10 rounded-[2rem] border border-calm-silver/30 group hover:shadow-glow-pink transition-all duration-500 reveal">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:-translate-y-2 transition-transform text-calm-pink">
-                        <i data-lucide="apple" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-calm-dark mb-4">Διατροφικές Διαταραχές & Εικόνα Σώματος</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        Η σχέση με το φαγητό είναι συχνά αντανάκλαση των εσωτερικών μας συγκρούσεων. Ως Master Practitioner, εστιάζουμε στην ψυχολογία πίσω από την τροφή, αντιμετωπίζοντας τη συναισθηματική υπερφαγία και την ψυχολογική διάσταση της παχυσαρκίας. Απεγκλωβιστείτε από τις ενοχές.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Διατροφικές Διαταραχές (60')</span>
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Παχυσαρκία (60')</span>
-                    </div>
-                </div>
-
-                <div class="bg-calm-light p-10 rounded-[2rem] border border-calm-silver/30 group hover:shadow-glow-sage transition-all duration-500 reveal reveal-delay-1">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:-translate-y-2 transition-transform text-calm-sage">
-                        <i data-lucide="wind" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-calm-dark mb-4">Διαχείριση Άγχους & Ψυχοσωματικών</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        Ανακούφιση από χρόνιο στρες, κατάθλιψη και έντονους φόβους. Όταν το άγχος παραμένει "βουβό", συχνά βρίσκει διέξοδο μέσα από κρίσεις πανικού. Παρέχουμε πρακτικά εργαλεία (CBT) για ηρεμία στο "εδώ και τώρα", κατανοώντας τις βαθύτερες ρίζες.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Ατομική (60')</span>
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Φόβος & Πανικός (50')</span>
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-calm-silver/30 group hover:border-calm-pink/50 hover:shadow-card-hover transition-all duration-500 reveal overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-pink/10 rounded-bl-[100px] transition-transform duration-500 group-hover:scale-110"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-calm-light rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-white group-hover:-translate-y-2 transition-transform duration-500 text-calm-pink">
+                            <i data-lucide="utensils-crossed" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-calm-dark mb-4 group-hover:text-calm-pink transition-colors">Διατροφικές Διαταραχές & Εικόνα Σώματος</h3>
+                        <p class="text-gray-600 mb-8 text-base leading-relaxed">
+                            Η σχέση με το φαγητό είναι συχνά αντανάκλαση των εσωτερικών μας συγκρούσεων. Ως Master Practitioner, εστιάζουμε στην ψυχολογία πίσω από την τροφή, αντιμετωπίζοντας τη συναισθηματική υπερφαγία και την ψυχολογική διάσταση της παχυσαρκίας. Απεγκλωβιστείτε από τις ενοχές.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Διατροφικές Διαταραχές (60')</span>
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Παχυσαρκία (60')</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-calm-light p-10 rounded-[2rem] border border-calm-silver/30 group hover:shadow-soft transition-all duration-500 reveal">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:-translate-y-2 transition-transform text-gray-500">
-                        <i data-lucide="sprout" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-calm-dark mb-4">Εφηβεία & Ανάπτυξη (M.Ed.)</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        Η εφηβεία αποτελεί μια κρίσιμη μεταβατική φάση. Αξιοποιώντας την εξειδικευμένη ακαδημαϊκή γνώση, παρέχεται στοχευμένη υποστήριξη σε εφήβους για τη διαχείριση του σχολικού άγχους, αναζήτηση ταυτότητας και ομαλή εξέλιξη στο οικογενειακό περιβάλλον.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Εφηβικό Άγχος</span>
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Συμβουλευτική Γονέων</span>
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-calm-silver/30 group hover:border-calm-sage/50 hover:shadow-card-hover transition-all duration-500 reveal reveal-delay-1 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-sage/10 rounded-bl-[100px] transition-transform duration-500 group-hover:scale-110"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-calm-light rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-white group-hover:-translate-y-2 transition-transform duration-500 text-calm-sage">
+                            <i data-lucide="waves" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-calm-dark mb-4 group-hover:text-calm-sage transition-colors">Διαχείριση Άγχους & Ψυχοσωματικών</h3>
+                        <p class="text-gray-600 mb-8 text-base leading-relaxed">
+                            Ανακούφιση από χρόνιο στρες, κατάθλιψη και έντονους φόβους. Όταν το άγχος παραμένει "βουβό", συχνά βρίσκει διέξοδο μέσα από κρίσεις πανικού. Παρέχουμε πρακτικά εργαλεία (CBT) για ηρεμία στο "εδώ και τώρα", κατανοώντας τις βαθύτερες ρίζες.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Ατομική (60')</span>
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Φόβος & Πανικός (50')</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-calm-light p-10 rounded-[2rem] border border-calm-silver/30 group hover:shadow-soft transition-all duration-500 reveal reveal-delay-1">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:-translate-y-2 transition-transform text-calm-dark">
-                        <i data-lucide="users" class="w-8 h-8"></i>
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-calm-silver/30 group hover:border-gray-400/50 hover:shadow-card-hover transition-all duration-500 reveal overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gray-100 rounded-bl-[100px] transition-transform duration-500 group-hover:scale-110"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-calm-light rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-white group-hover:-translate-y-2 transition-transform duration-500 text-gray-600">
+                            <i data-lucide="sprout" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-calm-dark mb-4 group-hover:text-gray-600 transition-colors">Εφηβεία & Ανάπτυξη (M.Ed.)</h3>
+                        <p class="text-gray-600 mb-8 text-base leading-relaxed">
+                            Η εφηβεία αποτελεί μια κρίσιμη μεταβατική φάση. Αξιοποιώντας την εξειδικευμένη ακαδημαϊκή γνώση, παρέχεται στοχευμένη υποστήριξη σε εφήβους για τη διαχείριση του σχολικού άγχους, αναζήτηση ταυτότητας και ομαλή εξέλιξη στο οικογενειακό περιβάλλον.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Εφηβικό Άγχος</span>
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Συμβουλευτική Γονέων</span>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-calm-dark mb-4">Θεραπεία Ζεύγους & Σχέσεων</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                        Δυσκολίες στην επικοινωνία, συναισθηματική αποξένωση και συγκρούσεις. Ο ρόλος του θεραπευτή είναι απόλυτα ουδέτερος. Εστιάζουμε στα μοτίβα της σχέσης σας, βοηθώντας σας να εκφράσετε τις ανάγκες σας και να χτίσετε ξανά γέφυρες.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/50">Θεραπεία Ζεύγους (60')</span>
+                </div>
+
+                <div class="relative bg-white p-10 rounded-[2.5rem] border border-calm-silver/30 group hover:border-calm-dark/50 hover:shadow-card-hover transition-all duration-500 reveal reveal-delay-1 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-calm-dark/5 rounded-bl-[100px] transition-transform duration-500 group-hover:scale-110"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-calm-light rounded-2xl flex items-center justify-center mb-8 shadow-inner border border-white group-hover:-translate-y-2 transition-transform duration-500 text-calm-dark">
+                            <i data-lucide="users" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-calm-dark mb-4 group-hover:text-calm-sage transition-colors">Θεραπεία Ζεύγους & Σχέσεων</h3>
+                        <p class="text-gray-600 mb-8 text-base leading-relaxed">
+                            Δυσκολίες στην επικοινωνία, συναισθηματική αποξένωση και συγκρούσεις. Ο ρόλος του θεραπευτή είναι απόλυτα ουδέτερος. Εστιάζουμε στα μοτίβα της σχέσης σας, βοηθώντας σας να εκφράσετε τις ανάγκες σας και να χτίσετε ξανά γέφυρες.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-1.5 bg-calm-light text-xs font-semibold text-calm-dark rounded-full border border-calm-silver/30">Θεραπεία Ζεύγους (60')</span>
+                        </div>
                     </div>
                 </div>
 
@@ -322,88 +343,92 @@
     </section>
 
     <section id="pillars" class="py-24 px-6 bg-calm-dark text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-calm-sage rounded-full blur-[100px]"></div>
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-calm-sage rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-calm-pink/30 rounded-full blur-[120px]"></div>
         </div>
 
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-20 reveal">
                 <span class="text-calm-silver font-bold tracking-widest text-sm mb-4 block no-accents">ΓΙΑΤΙ ΝΑ ΜΑΣ ΕΠΙΛΕΞΕΤΕ</span>
-                <h2 class="text-4xl md:text-5xl font-serif mb-6">Η Θεμελιώδης Βάση</h2>
+                <h2 class="text-4xl md:text-5xl font-serif mb-6 text-white">Η Θεμελιώδης Βάση</h2>
+                <div class="w-20 h-1 bg-calm-sage mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="glass-dark p-8 rounded-3xl reveal border-t-[3px] border-t-calm-sage">
-                    <div class="text-4xl mb-4">🎓</div>
-                    <h4 class="text-lg font-bold mb-3 text-calm-light">Διεθνής & Εγχώρια Ακαδημαϊκή Βάση</h4>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-dark p-8 rounded-3xl reveal border border-white/10 hover:border-calm-sage/50 transition-colors group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-calm-sage/20 transition-colors">
+                        <i data-lucide="graduation-cap" class="w-7 h-7 text-calm-sage"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Διεθνής & Εγχώρια Ακαδημαϊκή Βάση</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Συνδυασμός σπουδών ΕΚΠΑ με μεταπτυχιακό (MA) στο University of East London. Σύγχρονη κατανόηση της επιστήμης.</p>
                 </div>
                 
-                <div class="glass-dark p-8 rounded-3xl reveal reveal-delay-1 border-t-[3px] border-t-calm-pink">
-                    <div class="text-4xl mb-4">🍏</div>
-                    <h4 class="text-lg font-bold mb-3 text-calm-light">Master Practitioner</h4>
+                <div class="glass-dark p-8 rounded-3xl reveal reveal-delay-1 border border-white/10 hover:border-calm-pink/50 transition-colors group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-calm-pink/20 transition-colors">
+                        <i data-lucide="award" class="w-7 h-7 text-calm-pink"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Master Practitioner</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Η ανώτατη πιστοποίηση για την ασφαλή, κλινική αντιμετώπιση των διατροφικών διαταραχών και της παχυσαρκίας.</p>
                 </div>
 
-                <div class="glass-dark p-8 rounded-3xl reveal reveal-delay-2 border-t-[3px] border-t-calm-silver">
-                    <div class="text-4xl mb-4">🧒</div>
-                    <h4 class="text-lg font-bold mb-3 text-calm-light">Αυθεντία στην Εφηβεία (M.Ed.)</h4>
+                <div class="glass-dark p-8 rounded-3xl reveal reveal-delay-2 border border-white/10 hover:border-calm-silver/50 transition-colors group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-calm-silver/20 transition-colors">
+                        <i data-lucide="baby" class="w-7 h-7 text-calm-silver"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Αυθεντία στην Εφηβεία (M.Ed.)</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Εξειδικευμένο Μεταπτυχιακό στην Εξέλιξη του Παιδιού και σπουδές στην Εφηβική Υγεία (ΕΚΠΑ) για ολοκληρωμένη υποστήριξη.</p>
                 </div>
 
-                <div class="glass-dark p-8 rounded-3xl reveal reveal-delay-2 border-t-[3px] border-t-white">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h4 class="text-lg font-bold mb-3 text-calm-light">Επίσημη Αναγνώριση</h4>
+                <div class="glass-dark p-8 rounded-3xl reveal reveal-delay-2 border border-white/10 hover:border-white/50 transition-colors group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Επίσημη Αναγνώριση</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Πιστοποιημένο μέλος της Ελληνικής Συμβουλευτικής Εταιρείας. Αυστηροί κανόνες δεοντολογίας και διαρκής ενημέρωση.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-white relative">
+    <section class="py-24 px-6 bg-calm-light relative">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16 reveal">
+            <div class="text-center mb-20 reveal">
                 <span class="text-calm-sage font-bold tracking-widest text-sm mb-4 block no-accents">Η ΔΙΑΔΡΟΜΗ</span>
                 <h2 class="text-4xl md:text-5xl font-serif text-calm-dark mb-6">Πώς Συνεργαζόμαστε</h2>
             </div>
 
-            <div class="relative border-l-2 border-calm-sage/30 ml-4 md:ml-1/2 space-y-12">
-                <div class="relative pl-8 md:pl-0 reveal group">
-                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-calm-sage ring-4 ring-white group-hover:scale-125 transition-transform"></div>
-                    <div class="md:w-1/2 md:pr-12 md:text-right md:ml-auto md:-translate-x-full md:absolute md:top-0 md:left-0 text-left">
-                        <h4 class="text-xl font-bold text-calm-dark mb-2">1. Επικοινωνία</h4>
-                        <p class="text-gray-600 text-sm">Το πρώτο βήμα φροντίδας. Κλείνουμε το ραντεβού σας στη μέρα και ώρα που σας εξυπηρετεί καλύτερα.</p>
-                    </div>
+            <div class="max-w-2xl mx-auto space-y-8 relative z-10">
+                <div class="hidden md:block absolute left-1/2 top-8 bottom-8 w-px bg-calm-silver/50 transform -translate-x-1/2 -z-10"></div>
+
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-soft border border-calm-silver/30 text-center reveal group hover:border-calm-sage transition-colors relative">
+                    <div class="w-12 h-12 rounded-full bg-calm-sage text-white font-bold text-lg flex items-center justify-center mx-auto mb-6 shadow-glow-sage group-hover:scale-110 transition-transform">1</div>
+                    <h4 class="text-2xl font-bold text-calm-dark mb-4">Επικοινωνία</h4>
+                    <p class="text-gray-600 text-base leading-relaxed">Το πρώτο βήμα φροντίδας. Κλείνουμε το ραντεβού σας στη μέρα και ώρα που σας εξυπηρετεί καλύτερα.</p>
                 </div>
                 
-                <div class="relative pl-8 md:pl-12 reveal group pt-0 md:pt-16">
-                    <div class="absolute -left-[9px] top-1 md:top-17 w-4 h-4 rounded-full bg-calm-pink ring-4 ring-white group-hover:scale-125 transition-transform"></div>
-                    <div class="md:w-1/2">
-                        <h4 class="text-xl font-bold text-calm-dark mb-2">2. Πρώτη Συνάντηση</h4>
-                        <p class="text-gray-600 text-sm">Μια ελεύθερη συζήτηση γνωριμίας σε ασφαλές περιβάλλον. Ακούμε τις ανάγκες σας χωρίς καμία κριτική.</p>
-                    </div>
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-soft border border-calm-silver/30 text-center reveal group hover:border-calm-pink transition-colors relative">
+                    <div class="w-12 h-12 rounded-full bg-calm-pink text-white font-bold text-lg flex items-center justify-center mx-auto mb-6 shadow-glow-pink group-hover:scale-110 transition-transform">2</div>
+                    <h4 class="text-2xl font-bold text-calm-dark mb-4">Πρώτη Συνάντηση</h4>
+                    <p class="text-gray-600 text-base leading-relaxed">Μια ελεύθερη συζήτηση γνωριμίας σε ασφαλές περιβάλλον. Ακούμε τις ανάγκες σας χωρίς καμία κριτική.</p>
                 </div>
 
-                <div class="relative pl-8 md:pl-0 reveal group pt-0 md:pt-16">
-                    <div class="absolute -left-[9px] top-1 md:top-17 w-4 h-4 rounded-full bg-calm-silver ring-4 ring-white group-hover:scale-125 transition-transform"></div>
-                    <div class="md:w-1/2 md:pr-12 md:text-right md:ml-auto md:-translate-x-full md:absolute md:top-16 md:left-0 text-left">
-                        <h4 class="text-xl font-bold text-calm-dark mb-2">3. Συνθετικό Πλάνο</h4>
-                        <p class="text-gray-600 text-sm">Αντλούμε εργαλεία από διάφορες προσεγγίσεις, σχεδιάζοντας το θεραπευτικό πλάνο που ταιριάζει ακριβώς στη δική σας ιδιοσυγκρασία.</p>
-                    </div>
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-soft border border-calm-silver/30 text-center reveal group hover:border-calm-silver transition-colors relative">
+                    <div class="w-12 h-12 rounded-full bg-calm-silver text-white font-bold text-lg flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform">3</div>
+                    <h4 class="text-2xl font-bold text-calm-dark mb-4">Συνθετικό Πλάνο</h4>
+                    <p class="text-gray-600 text-base leading-relaxed">Αντλούμε εργαλεία από διάφορες προσεγγίσεις, σχεδιάζοντας το θεραπευτικό πλάνο που ταιριάζει ακριβώς στη δική σας ιδιοσυγκρασία.</p>
                 </div>
 
-                <div class="relative pl-8 md:pl-12 reveal group pt-0 md:pt-32">
-                    <div class="absolute -left-[9px] top-1 md:top-33 w-4 h-4 rounded-full bg-calm-dark ring-4 ring-white group-hover:scale-125 transition-transform"></div>
-                    <div class="md:w-1/2">
-                        <h4 class="text-xl font-bold text-calm-dark mb-2">4. Επούλωση & Αλλαγή</h4>
-                        <p class="text-gray-600 text-sm">Σταθερά βήματα προς την αυτογνωσία, την ανθεκτικότητα και την αρμονική σύνθεση του εαυτού σας.</p>
-                    </div>
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-soft border border-calm-silver/30 text-center reveal group hover:border-calm-dark transition-colors relative">
+                    <div class="w-12 h-12 rounded-full bg-calm-dark text-white font-bold text-lg flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:scale-110 transition-transform">4</div>
+                    <h4 class="text-2xl font-bold text-calm-dark mb-4">Επούλωση & Αλλαγή</h4>
+                    <p class="text-gray-600 text-base leading-relaxed">Σταθερά βήματα προς την αυτογνωσία, την ανθεκτικότητα και την αρμονική σύνθεση του εαυτού σας.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="space" class="py-24 px-6 bg-calm-light">
+    <section id="space" class="py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl md:text-5xl font-serif text-calm-dark mb-4">Ο Χώρος</h2>
@@ -440,19 +465,19 @@
         <img id="lightbox-img" src="" alt="Enlarged View" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default" onclick="event.stopPropagation()">
     </div>
 
-    <section id="reviews" class="py-24 bg-white overflow-hidden border-t border-calm-silver/20">
+    <section id="reviews" class="py-24 bg-calm-light overflow-hidden border-t border-calm-silver/20">
         <div class="max-w-7xl mx-auto px-6 mb-12 text-center reveal">
             <span class="text-calm-sage font-bold tracking-widest text-sm mb-4 block no-accents">ΑΞΙΟΛΟΓΗΣΕΙΣ</span>
             <h2 class="text-4xl font-serif text-calm-dark mb-4">Εμπειρίες Θεραπευόμενων</h2>
         </div>
 
         <div class="w-full overflow-hidden relative pb-10">
-            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-calm-light to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-calm-light to-transparent z-10 pointer-events-none"></div>
             
             <div class="marquee-container animate-marquee">
                 <div class="flex space-x-6 px-3">
-                    <div class="w-[350px] bg-calm-light p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -463,7 +488,7 @@
                         <p class="text-sm font-bold text-calm-dark">— Αξιολόγηση μέσω Doctoranytime</p>
                     </div>
 
-                    <div class="w-[350px] bg-calm-light p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -474,7 +499,7 @@
                         <p class="text-sm font-bold text-calm-dark">— Αξιολόγηση μέσω Doctoranytime</p>
                     </div>
 
-                    <div class="w-[350px] bg-calm-light p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -487,7 +512,7 @@
                 </div>
                 
                 <div class="flex space-x-6 px-3" aria-hidden="true">
-                    <div class="w-[350px] bg-calm-light p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -498,7 +523,7 @@
                         <p class="text-sm font-bold text-calm-dark">— Αξιολόγηση μέσω Doctoranytime</p>
                     </div>
 
-                    <div class="w-[350px] bg-calm-light p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -509,7 +534,7 @@
                         <p class="text-sm font-bold text-calm-dark">— Αξιολόγηση μέσω Doctoranytime</p>
                     </div>
 
-                    <div class="w-[350px] bg-calm-light p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -523,47 +548,67 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/vasileia-tsotra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-calm-silver/40 rounded-full text-sm font-bold text-calm-dark hover:border-calm-sage transition-colors">
+                <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/vasileia-tsotra" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-calm-silver/40 rounded-full text-sm font-bold text-calm-dark hover:border-calm-sage transition-colors shadow-sm">
                     Διαβάστε περισσότερα στο <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4 ml-1" alt="DoctorAnytime">
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-calm-light relative border-t border-calm-silver/20">
+    <section class="py-24 px-6 bg-white relative border-t border-calm-silver/20">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-12 reveal">
                 <h2 class="text-4xl font-serif text-calm-dark mb-4">Συχνές Ερωτήσεις</h2>
             </div>
 
             <div class="space-y-4">
-                <div class="border border-calm-silver/40 rounded-2xl bg-white overflow-hidden reveal">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none">
+                <div class="border border-calm-silver/40 rounded-2xl bg-calm-light overflow-hidden reveal">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none hover:bg-calm-sage/5 transition-colors">
                         Τι σημαίνει Συνθετικό Μοντέλο;
                         <i data-lucide="chevron-down" class="w-5 h-5 text-calm-sage transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content bg-calm-light/50 px-6">
+                    <div class="faq-content px-6">
                         <p class="pb-5 text-gray-600 text-sm">Το Συνθετικό Μοντέλο συνδυάζει στοιχεία από διαφορετικές ψυχοθεραπευτικές προσεγγίσεις (π.χ. Προσωποκεντρική, CBT, Ψυχοδυναμική). Αυτό σημαίνει πως η θεραπεία προσαρμόζεται απόλυτα στις δικές σας ανάγκες, και όχι το αντίστροφο.</p>
                     </div>
                 </div>
 
-                <div class="border border-calm-silver/40 rounded-2xl bg-white overflow-hidden reveal reveal-delay-1">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none">
+                <div class="border border-calm-silver/40 rounded-2xl bg-calm-light overflow-hidden reveal reveal-delay-1">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none hover:bg-calm-sage/5 transition-colors">
                         Πόσο διαρκεί η κάθε συνεδρία;
                         <i data-lucide="chevron-down" class="w-5 h-5 text-calm-sage transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content bg-calm-light/50 px-6">
+                    <div class="faq-content px-6">
                         <p class="pb-5 text-gray-600 text-sm">Οι ατομικές συνεδρίες (συμπεριλαμβανομένων αυτών για διατροφικές διαταραχές, άγχος και παχυσαρκία) καθώς και οι συνεδρίες ζεύγους διαρκούν συνήθως 60 λεπτά, ενώ κάποιες εξειδικευμένες συνεδρίες (π.χ. διαχείριση πανικού) διαρκούν 50 λεπτά.</p>
                     </div>
                 </div>
 
-                <div class="border border-calm-silver/40 rounded-2xl bg-white overflow-hidden reveal reveal-delay-2">
-                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none">
+                <div class="border border-calm-silver/40 rounded-2xl bg-calm-light overflow-hidden reveal reveal-delay-2">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none hover:bg-calm-sage/5 transition-colors">
+                        Πόσο συχνά πρέπει να γίνονται οι συνεδρίες;
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-calm-sage transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6">
+                        <p class="pb-5 text-gray-600 text-sm">Η συχνότητα των συνεδριών καθορίζεται πάντα συνεργατικά στην πρώτη συνάντηση. Συνήθως, για να υπάρξει σταθερός ρυθμός δουλειάς και επούλωσης, προτείνεται μία συνεδρία ανά εβδομάδα, αλλά το πλάνο είναι ευέλικτο βάσει των δικών σας αναγκών.</p>
+                    </div>
+                </div>
+
+                <div class="border border-calm-silver/40 rounded-2xl bg-calm-light overflow-hidden reveal reveal-delay-2">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none hover:bg-calm-sage/5 transition-colors">
+                        Τι γίνεται αν νιώσω ότι δεν ταιριάζουμε;
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-calm-sage transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6">
+                        <p class="pb-5 text-gray-600 text-sm">Η θεραπευτική σχέση είναι το πιο σημαντικό εργαλείο. Στόχος είναι να νιώθετε απόλυτη ασφάλεια. Εάν αισθανθείτε ότι δεν σας ταιριάζει η προσέγγιση, μπορείτε να το εκφράσετε απολύτως ελεύθερα και χωρίς καμία παρεξήγηση, ώστε να αναπροσαρμόσουμε το πλάνο ή να σας κατευθύνω καταλλήλως.</p>
+                    </div>
+                </div>
+
+                <div class="border border-calm-silver/40 rounded-2xl bg-calm-light overflow-hidden reveal reveal-delay-2">
+                    <button class="faq-toggle w-full px-6 py-5 text-left font-bold text-calm-dark flex justify-between items-center focus:outline-none hover:bg-calm-sage/5 transition-colors">
                         Παρέχονται διαδικτυακές συνεδρίες;
                         <i data-lucide="chevron-down" class="w-5 h-5 text-calm-sage transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content bg-calm-light/50 px-6">
-                        <p class="pb-5 text-gray-600 text-sm">Ναι, υπάρχει η δυνατότητα πραγματοποίησης διαδικτυακών συνεδριών (online) για όσους δεν μπορούν να προσέλθουν στον χώρο, διασφαλίζοντας την ίδια ποιότητα και εχεμύθεια.</p>
+                    <div class="faq-content px-6">
+                        <p class="pb-5 text-gray-600 text-sm">Ναι, υπάρχει η δυνατότητα πραγματοποίησης διαδικτυακών συνεδριών (online) για όσους δεν μπορούν να προσέλθουν στον χώρο, διασφαλίζοντας την ίδια ακριβώς ποιότητα, εχεμύθεια και επαγγελματισμό με τις δια ζώσης συναντήσεις.</p>
                     </div>
                 </div>
             </div>
