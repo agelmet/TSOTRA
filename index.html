@@ -9,6 +9,8 @@
     <meta name="author" content="Advon Media">
     <meta name="robots" content="index, follow">
     
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%23818d7c'/><text x='50%' y='52%' font-family='Georgia, serif' font-size='42' font-style='italic' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>BT</text></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -104,14 +106,16 @@
             border: 1px solid rgba(201, 206, 206, 0.15);
         }
 
-        /* Hero Image Overlay Blend - Now with a green-ish (sage) shadow/gradient */
+        /* Hero Image Overlay Blend */
         .hero-overlay {
             background: linear-gradient(135deg, rgba(252,252,252,0.95) 0%, rgba(252,252,252,0.8) 40%, rgba(129,141,124,0.45) 100%);
         }
 
-        /* Marquee */
-        .marquee-container { display: flex; width: 200%; }
-        .marquee-container:hover { animation-play-state: paused; }
+        /* Marquee - Only apply on desktop to save mobile performance */
+        @media (min-width: 768px) {
+            .marquee-container { display: flex; width: 200%; }
+            .marquee-container:hover { animation-play-state: paused; }
+        }
 
         /* Lightbox */
         #lightbox {
@@ -192,9 +196,17 @@
                 <h1 class="text-5xl lg:text-7xl font-serif text-calm-dark leading-[1.15] mb-6">
                     Ενδυνάμωση, <span class="italic text-calm-sage">Αυτοαποδοχή</span> και Ισορροπία.
                 </h1>
-                <p class="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
+                <p class="text-lg text-gray-600 mb-6 lg:mb-10 max-w-lg leading-relaxed">
                     Ένας ασφαλής χώρος ακρόασης, όπου ενήλικες, έφηβοι και ζευγάρια μπορούν να κατανοήσουν τα συναισθήματά τους και να βρουν την εσωτερική τους πυξίδα.
                 </p>
+
+                <div class="flex lg:hidden justify-center items-center w-full mb-8 relative">
+                    <div class="absolute w-[80%] h-[80%] bg-calm-pink/10 rounded-full blur-[40px]"></div>
+                    <div class="relative w-full max-w-[300px] aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border-[4px] border-white z-10">
+                        <img src="https://github.com/agelmet/TSOTRA/blob/main/ts5.jpg?raw=true" alt="Βασιλεία Τσότρα Εικόνα" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
                 <div class="flex flex-wrap items-center gap-4">
                     <a href="#contact" class="px-8 py-4 bg-calm-dark text-white rounded-full font-bold hover:bg-calm-sage transition-colors shadow-soft flex items-center gap-2 group">
                         ΞΕΚΙΝΗΣΤΕ ΤΟ ΤΑΞΙΔΙ ΣΑΣ
@@ -224,7 +236,7 @@
     <section id="about" class="py-24 px-6 relative z-10">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
             
-            <div class="lg:col-span-5 relative reveal">
+            <div class="hidden lg:block lg:col-span-5 relative reveal">
                 <div class="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white group">
                     <img src="https://github.com/agelmet/TSOTRA/blob/main/ts6.jpg?raw=true" alt="Βασιλεία Τσότρα Portrait" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                 </div>
@@ -241,6 +253,14 @@
                     <p>
                         Η θεραπευτική της προσέγγιση βασίζεται στο <strong>Συνθετικό Μοντέλο</strong>. Συνδυάζει οργανικά εργαλεία από την Προσωποκεντρική, τη Γνωσιακή-Συμπεριφορική (CBT) και την Ψυχοδυναμική προσέγγιση, προσαρμόζοντας τη θεραπεία απόλυτα στη μοναδικότητα του κάθε ανθρώπου.
                     </p>
+
+                    <div class="block lg:hidden my-10 relative">
+                        <div class="w-full max-w-[320px] mx-auto aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white">
+                            <img src="https://github.com/agelmet/TSOTRA/blob/main/ts6.jpg?raw=true" alt="Βασιλεία Τσότρα Portrait" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-calm-sage/20 rounded-full z-[-1] animate-pulse"></div>
+                    </div>
+
                     <div class="p-6 bg-white rounded-2xl shadow-sm border border-calm-silver/30 my-8 border-l-4 border-l-calm-pink">
                         <p class="italic text-gray-700">
                             Διαθέτει δύο εξαιρετικά στοχευμένες εξειδικεύσεις: Είναι κάτοχος του διπλώματος <strong>Master Practitioner in Eating Disorders and Obesity</strong>, και διαθέτει Μεταπτυχιακό (M.Ed.) στην εξέλιξη του παιδιού και τη διαχείριση του εφηβικού άγχους.
@@ -471,13 +491,13 @@
             <h2 class="text-4xl font-serif text-calm-dark mb-4">Εμπειρίες Θεραπευόμενων</h2>
         </div>
 
-        <div class="w-full overflow-hidden relative pb-10">
-            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-calm-light to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-calm-light to-transparent z-10 pointer-events-none"></div>
+        <div class="w-full relative pb-10">
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-calm-light to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-calm-light to-transparent z-10 pointer-events-none"></div>
             
-            <div class="marquee-container animate-marquee">
-                <div class="flex space-x-6 px-3">
-                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+            <div class="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:marquee-container md:animate-marquee">
+                <div class="flex space-x-6 px-4 md:px-3 shrink-0">
+                    <div class="w-[85vw] md:w-[350px] snap-center bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -488,7 +508,7 @@
                         <p class="text-sm font-bold text-calm-dark">— Αξιολόγηση μέσω Doctoranytime</p>
                     </div>
 
-                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[85vw] md:w-[350px] snap-center bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -499,7 +519,7 @@
                         <p class="text-sm font-bold text-calm-dark">— Αξιολόγηση μέσω Doctoranytime</p>
                     </div>
 
-                    <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
+                    <div class="w-[85vw] md:w-[350px] snap-center bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -511,7 +531,7 @@
                     </div>
                 </div>
                 
-                <div class="flex space-x-6 px-3" aria-hidden="true">
+                <div class="hidden md:flex space-x-6 px-3 shrink-0" aria-hidden="true">
                     <div class="w-[350px] bg-white p-8 rounded-3xl shadow-sm border border-calm-silver/20 shrink-0">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-1 text-calm-sage">
